@@ -1,7 +1,7 @@
 
-# 🧊 Comgraph3D – Interaktives 3D-Sonnensystem
+# 🧊 OpenGL-3D-Scene – Interaktives 3D-Sonnensystem
 
-**Comgraph3D** ist ein interaktives 3D-Grafikprojekt zur Darstellung eines Sonnensystems.  
+**OpenGL-3D-Scene** ist ein interaktives 3D-Grafikprojekt zur Darstellung eines Sonnensystems.  
 Es wurde in **C** mit OpenGL 3.3 umgesetzt und zeigt Planetenbewegung, Texturen, Licht und Kamerasteuerung.
 
 ---
@@ -33,34 +33,34 @@ Es wurde in **C** mit OpenGL 3.3 umgesetzt und zeigt Planetenbewegung, Texturen,
 ## 📁 Projektstruktur
 
 ```bash
-Comgraph3D/
-├── assets/
-│   ├── shaders/
-│   │   ├── basic_color.vert
-│   │   └── basic_color.frag
-│   └── textures/
-│       ├── sun.jpg
-│       ├── earth.jpg
-│       ├── mars.jpg
-│       ├── mercury.jpg
-│       ├── venus.jpg
-│       ├── jupiter.jpg
-│       ├── saturn.jpg
-│       ├── uranus.jpg
-│       ├── neptune.jpg
-│       ├── pluto.jpg
-│       ├── rock.jpg
-│       ├── large_rock.jpg
-│       └── space.jpeg
+OpenGL-3D-Scene/
+├── .vscode
+├── shaders/
+│   ├── basic_color.vert
+│   └── basic_color.frag
+├── textures/
+│    ├── sun.jpg
+│    ├── earth.jpg
+│    ├── mars.jpg
+│    ├── mercury.jpg
+│    ├── venus.jpg
+│    ├── jupiter.jpg
+│    ├── saturn.jpg
+│    ├── uranus.jpg
+│    ├── neptune.jpg
+│    ├── pluto.jpg
+│    ├── rock.jpg
+│    ├── large_rock.jpg
+│    └── space.jpeg
 ├── models/
 │   ├── cube.obj
 │   └── rock.obj
 ├── include/
+│   ├── GL
+│   ├── GLFW
 │   ├── camera.h
-│   ├── camera_matrix.h
 │   ├── light.h
 │   ├── matrix.h
-│   ├── matrix_transformation.h
 │   ├── models.h
 │   ├── object.h
 │   ├── obj_loader.h
@@ -73,24 +73,48 @@ Comgraph3D/
 │   ├── camera_matrix.c
 │   ├── light.c
 │   ├── matrix.c
-│   ├── matrix_transformation.c
 │   ├── models.c
 │   ├── object.c
 │   ├── obj_loader.c
 │   ├── shader.c
 │   └── test-matrix-und-camera.c
-├── build/                   # Optional – für kompilierte Dateien
-├── docs/                    # Optional – Projektdokumentation
 ├── obj/                     # Kompilierte Objektdateien (.o)
+├── .gitignore
 ├── Makefile
 ├── README.md
 ├── app.exe
+├── test-matrix.exe
+├── ...
+
 
 ```
 
 ---
 
 ## ⚙️ Installation
+Um das Projekt auf den Pool-PCs der Hochschule Hannover zu installieren und auszuführen, folgen Sie bitte diesen Schritten:
+
+Erstellen eines Personal Access Token (PAT)
+Besuchen Sie GitHub Docs unter https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls und folgen Sie der Anleitung zum Erstellen eines PAT. Stellen Sie sicher, dass Sie die repo-Berechtigungen aktivieren, um Zugriff auf private Repositories zu erhalten.
+
+Code aus dem GitHub-Repository klonen
+Öffnen Sie ein Terminal und navigieren Sie zu dem Verzeichnis, in dem Sie das Projekt speichern möchten. Führen Sie dann den folgenden Befehl aus, um das Repository zu klonen. Ersetzen Sie <your_token> und <your_repository_url> durch Ihren PAT und die URL Ihres Repositories:
+git clone https://<your_token>@github.com/Computergrafikprojekt/OpenGL-3D-Scene.git
+
+Da es sich bei diesem Projekt um ein privates Repository handelt, wurden dem Prof. die Dateien via Moodle zur Verfügung gestellt. Diese Dateien sollten in das gewünschte Verzeichnis gezogen werden.
+
+Programm erstellen und ausführen
+Navigieren Sie anschließend mittels Terminal in das Verzeichnis der Projekt-Dateien.
+cd OpenGL-3D-Scene
+
+Falls sich bereits eine ausführbare Datei ./app in Ihrem Verzeichnis befindet, entfernen Sie diese mit folgendem Befehl:
+rm ./app
+
+Führen Sie den make-Befehl aus, um das ausführbare Programm zu erstellen:
+make
+
+Nachdem der Kompiliervorgang abgeschlossen ist, können Sie das Programm mit folgendem Befehl starten:
+./app
 
 ### Voraussetzungen (MSYS2 empfohlen)
 
@@ -144,3 +168,7 @@ Alle Anforderungen aus dem Aufgabenblatt wurden umgesetzt:
 - **Phu Quy Le**, Matrikelnummer: 1764640  
 - **Truong Minh Khoi Nguyen**, Matrikelnummer: 1764501  
 - **Elias Al-Maqtry**, Matrikelnummer: 1630686
+
+## Quellen
+- **Planeten**: _https://www.solarsystemscope.com/textures/_
+- **Rock**: _https://free3d.com/3d-model/low-poly-rock-4631.html_
