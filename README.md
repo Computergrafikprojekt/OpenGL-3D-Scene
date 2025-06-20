@@ -116,6 +116,7 @@ sudo apt update
 sudo apt install build-essential libgl1-mesa-dev libglew-dev libglfw3-dev
 ```
 **Windows (MSYS2 empfohlen**):
+
 Öffnen Sie MSYS2 MinGW64 Shell und führen Sie aus:
 ```bash
 pacman -S mingw-w64-x86_64-gcc \
@@ -176,3 +177,4 @@ Alle Anforderungen aus dem Aufgabenblatt wurden umgesetzt:
 ## Quellen
 - **Planeten**: _https://www.solarsystemscope.com/textures/_
 - **Rock**: _https://free3d.com/3d-model/low-poly-rock-4631.html_
+- **stb_image lib**: _https://github.com/nothings/stb_
