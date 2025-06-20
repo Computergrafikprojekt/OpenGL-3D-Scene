@@ -79,8 +79,10 @@ OpenGL-3D-Scene/
 │   ├── shader.c
 │   └── test-matrix-und-camera.c
 ├── obj/                     # Kompilierte Objektdateien (.o)
+├── linux/obj
 ├── .gitignore
 ├── Makefile
+├── Makefile.linux
 ├── README.md
 ├── app (Linux)
 ├── app.exe (Windows)
