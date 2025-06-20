@@ -1,0 +1,58 @@
+# Compiler
+CC = gcc
+
+# Kompilierungsoptionen
+# -Wall: Alle Warnungen anzeigen
+# -g: Debug-Informationen hinzufügen
+# -Iinclude: 'include' Verzeichnis für Header-Dateien
+CFLAGS = -Wall -g -Iinclude
+
+# Zu verlinkende Bibliotheken unter Linux
+# -lglfw: GLFW Bibliothek
+# -lGLEW: GLEW Bibliothek
+# -lGL: OpenGL Bibliothek
+# -lm: math library
+LIBS = -lglfw -lGLEW -lGL -lm
+
+# Name der ausführbaren Datei
+TARGET = app
+
+# Quellcode-Verzeichnis
+SRC_DIR = src
+
+# Quellcodedateien (bitte sicherstellen, dass alle .c-Dateien aufgeführt sind)
+SRCS = $(SRC_DIR)/main.c \
+       $(SRC_DIR)/utils.c \
+       $(SRC_DIR)/shader.c \
+       $(SRC_DIR)/matrix.c \
+       $(SRC_DIR)/models.c \
+       $(SRC_DIR)/object.c \
+       $(SRC_DIR)/obj_loader.c \
+       $(SRC_DIR)/light.c \
+       $(SRC_DIR)/camera.c
+
+# Verzeichnis für Objektdateien
+OBJ_DIR = linux/obj
+
+# Objektdateien erzeugt aus Quellcodedateien
+OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRCS))
+
+# Standardziel: Kompiliert das gesamte Projekt
+all: $(OBJ_DIR) $(TARGET)
+
+# Erzeugt das Objektverzeichnis, falls nicht vorhanden
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+# Linken der Objektdateien zur ausführbaren Datei
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $@ $(LIBS)
+
+# Kompiliere jede .c-Datei zu .o
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Aufräumen: Entfernt ausführbare Datei und Objektdateien
+clean:
+	rm -f $(TARGET) $(OBJ_DIR)/*.o
+	rmdir $(OBJ_DIR) 2>/dev/null || true
