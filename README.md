@@ -94,27 +94,30 @@ OpenGL-3D-Scene/
 ## ⚙️ Installation
 Um das Projekt auf den Pool-PCs der Hochschule Hannover zu installieren und auszuführen, folgen Sie bitte diesen Schritten:
 
-Erstellen eines Personal Access Token (PAT)
+1. Erstellen eines Personal Access Token (PAT)
 Besuchen Sie GitHub Docs unter https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls und folgen Sie der Anleitung zum Erstellen eines PAT. Stellen Sie sicher, dass Sie die repo-Berechtigungen aktivieren, um Zugriff auf private Repositories zu erhalten.
 
-Code aus dem GitHub-Repository klonen
+2. Code aus dem GitHub-Repository klonen
 Öffnen Sie ein Terminal und navigieren Sie zu dem Verzeichnis, in dem Sie das Projekt speichern möchten. Führen Sie dann den folgenden Befehl aus, um das Repository zu klonen. Ersetzen Sie <your_token> und <your_repository_url> durch Ihren PAT und die URL Ihres Repositories:
 git clone https://<your_token>@github.com/Computergrafikprojekt/OpenGL-3D-Scene.git
 
 Da es sich bei diesem Projekt um ein privates Repository handelt, wurden dem Prof. die Dateien via Moodle zur Verfügung gestellt. Diese Dateien sollten in das gewünschte Verzeichnis gezogen werden.
 
-Programm erstellen und ausführen
+3. Notwendige Bibliotheken installieren (vor dem Kompilieren)
+Damit das Projekt erfolgreich kompiliert und ausgeführt werden kann, müssen die folgenden Pakete installiert sein
+```bash
+            sudo apt update
+            sudo apt install build-essential libgl1-mesa-dev libglew-dev libglfw3-dev
+```
+4. Programm erstellen und ausführen
 Navigieren Sie anschließend mittels Terminal in das Verzeichnis der Projekt-Dateien.
+```bash
 cd OpenGL-3D-Scene
-
-Falls sich bereits eine ausführbare Datei ./app in Ihrem Verzeichnis befindet, entfernen Sie diese mit folgendem Befehl:
-rm ./app
-
-Führen Sie den make-Befehl aus, um das ausführbare Programm zu erstellen:
-make
-
-Nachdem der Kompiliervorgang abgeschlossen ist, können Sie das Programm mit folgendem Befehl starten:
+```
+Sie starten das Programm mit folgendem Befehl :
+```bash
 ./app
+```
 
 ### Voraussetzungen (MSYS2 empfohlen)
 
