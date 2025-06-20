@@ -98,15 +98,18 @@ OpenGL-3D-Scene/
 Um das Projekt auf den Pool-PCs der Hochschule Hannover zu installieren und auszuführen, folgen Sie bitte diesen Schritten:
 
 1. Erstellen eines Personal Access Token (PAT)
+   
 Besuchen Sie GitHub Docs unter https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls und folgen Sie der Anleitung zum Erstellen eines PAT. Stellen Sie sicher, dass Sie die repo-Berechtigungen aktivieren, um Zugriff auf private Repositories zu erhalten.
 
-2. Code aus dem GitHub-Repository klonen
+3. Code aus dem GitHub-Repository klonen
+   
 Öffnen Sie ein Terminal und navigieren Sie zu dem Verzeichnis, in dem Sie das Projekt speichern möchten. Führen Sie dann den folgenden Befehl aus, um das Repository zu klonen. Ersetzen Sie <your_token> und <your_repository_url> durch Ihren PAT und die URL Ihres Repositories:
 git clone https://<your_token>@github.com/Computergrafikprojekt/OpenGL-3D-Scene.git
 
 Da es sich bei diesem Projekt um ein privates Repository handelt, wurden dem Prof. die Dateien via Moodle zur Verfügung gestellt. Diese Dateien sollten in das gewünschte Verzeichnis gezogen werden.
 
 3. Notwendige Bibliotheken installieren (vor dem Kompilieren)
+   
 **Linux** :
 ```bash
 sudo apt update
@@ -122,6 +125,7 @@ pacman -S mingw-w64-x86_64-gcc \
           make
 ```
 4. Programm erstellen und ausführen
+   
 **Linux** :
 ```bash
 cd OpenGL-3D-Scene
