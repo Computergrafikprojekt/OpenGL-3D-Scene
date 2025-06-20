@@ -82,7 +82,8 @@ OpenGL-3D-Scene/
 ├── .gitignore
 ├── Makefile
 ├── README.md
-├── app.exe
+├── app (Linux)
+├── app.exe (Windows)
 ├── test-matrix.exe
 ├── ...
 
