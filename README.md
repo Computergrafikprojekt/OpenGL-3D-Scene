@@ -105,38 +105,32 @@ git clone https://<your_token>@github.com/Computergrafikprojekt/OpenGL-3D-Scene.
 Da es sich bei diesem Projekt um ein privates Repository handelt, wurden dem Prof. die Dateien via Moodle zur Verfügung gestellt. Diese Dateien sollten in das gewünschte Verzeichnis gezogen werden.
 
 3. Notwendige Bibliotheken installieren (vor dem Kompilieren)
-Damit das Projekt erfolgreich kompiliert und ausgeführt werden kann, müssen die folgenden Pakete installiert sein
+**Linux** :
 ```bash
 sudo apt update
 sudo apt install build-essential libgl1-mesa-dev libglew-dev libglfw3-dev
 ```
-4. Programm erstellen und ausführen
-Navigieren Sie anschließend mittels Terminal in das Verzeichnis der Projekt-Dateien.
-```bash
-cd OpenGL-3D-Scene
-```
-Sie starten das Programm mit folgendem Befehl :
-```bash
-./app
-```
-
-### Voraussetzungen (MSYS2 empfohlen)
-
+**Windows (MSYS2 empfohlen**):
+Öffnen Sie MSYS2 MinGW64 Shell und führen Sie aus:
 ```bash
 pacman -S mingw-w64-x86_64-gcc \
-            mingw-w64-x86_64-glfw \
-            mingw-w64-x86_64-glew \
-            mingw-w64-x86_64-stb \
-            make
+          mingw-w64-x86_64-glfw \
+          mingw-w64-x86_64-glew \
+          mingw-w64-x86_64-stb \
+          make
 ```
-
----
-
-### 🔧 Build & Start
-
+4. Programm erstellen und ausführen
+**Linux** :
 ```bash
-make         # Projekt kompilieren
-./app.exe    # Anwendung starten
+cd OpenGL-3D-Scene
+make -f Makefile.linux      # kompiliert mit Linux-Makefile
+./app                       # Programm starten
+```
+**Windows (in MSYS2 MinGW64 Shell)** :
+```bash
+cd OpenGL-3D-Scene
+make                        # kompiliert mit Windows-Makefile (Makefile)
+./app.exe                   # Programm starten
 ```
 
 ---
