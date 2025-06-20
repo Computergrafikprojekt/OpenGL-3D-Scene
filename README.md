@@ -106,8 +106,8 @@ Da es sich bei diesem Projekt um ein privates Repository handelt, wurden dem Pro
 3. Notwendige Bibliotheken installieren (vor dem Kompilieren)
 Damit das Projekt erfolgreich kompiliert und ausgeführt werden kann, müssen die folgenden Pakete installiert sein
 ```bash
-            sudo apt update
-            sudo apt install build-essential libgl1-mesa-dev libglew-dev libglfw3-dev
+sudo apt update
+sudo apt install build-essential libgl1-mesa-dev libglew-dev libglfw3-dev
 ```
 4. Programm erstellen und ausführen
 Navigieren Sie anschließend mittels Terminal in das Verzeichnis der Projekt-Dateien.
